@@ -41,6 +41,7 @@ class TodoForm extends Component {
             name="todoDescription"
             value={this.state.todoDescription}
             onChange={this.handleChange}
+            maxLength="250"
           />
         </label>
         <select

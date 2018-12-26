@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './App.css';
 import {AppBar, Toolbar, Paper, Typography} from '@material-ui/core';
 import TodoForm from '../TodoForm/';
 import TodoList from '../TodoList/';
 import uuidv4 from  'uuid/v4'
+
 class App extends Component {
   constructor() {
     super();
