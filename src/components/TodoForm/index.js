@@ -5,8 +5,8 @@ class TodoForm extends Component {
     super(props);
     this.state = {
       title: '',
-      todo: '',
-      select: 'Work',
+      todoDescription: '',
+      tags: 'Work',
     };
   }
 
@@ -34,13 +34,13 @@ class TodoForm extends Component {
         <label>
           Todo:
           <textarea
-            name="todo"
-            value={this.state.todo}
+            name="todoDescription"
+            value={this.state.todoDescription}
             onChange={this.handleChange}
           />
         </label>
         <select
-          name="select"
+          name="tags"
           value={this.state.select}
           onChange={this.handleChange}>
           <option value="Work">Work</option>

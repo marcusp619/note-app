@@ -1,25 +1,24 @@
 import React, {Component} from 'react';
 import './App.css';
 import {AppBar, Toolbar, Paper, Typography} from '@material-ui/core';
-import TodoForm from '../TodoForm/'
+import TodoForm from '../TodoForm/';
 import AddTodo from '../AddTodo/';
 import TodoList from '../TodoList/';
 import TodoItem from '../TodoItem/';
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       todos: [],
-    }
+    };
   }
 
   addTodo = todo => {
-    const newTodo = {...todo, id: Date.now()}
-    const todos = [...this.state.todos, newTodo]
-    this.setState({todos})
-  }
-
+    const newTodo = {...todo, id: Date.now()};
+    const todos = [...this.state.todos, newTodo];
+    this.setState({todos});
+  };
 
   render() {
     return (
@@ -33,9 +32,8 @@ class App extends Component {
             </Toolbar>
           </AppBar>
         </Paper>
-        <TodoForm 
-          addTodo={this.addTodo}
-        />
+        <TodoForm addTodo={this.addTodo} />
+        <TodoList todos={this.state.todos} />
       </div>
     );
   }
