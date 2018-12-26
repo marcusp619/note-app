@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 import {AppBar, Toolbar, Paper, Typography} from '@material-ui/core';
+import TodoForm from '../TodoForm/'
+import AddTodo from '../AddTodo/';
+import TodoList from '../TodoList/';
+import TodoItem from '../TodoItem/';
 
 class App extends Component {
   render() {
@@ -14,8 +18,8 @@ class App extends Component {
               <Typography color="inherit">TODO APP</Typography>
             </Toolbar>
           </AppBar>
-          {this.props.children}
         </Paper>
+        <TodoForm />
       </div>
     );
   }
