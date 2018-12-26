@@ -1,13 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import Icon from '@material-ui/core/Icon';
+import {AppBar, Toolbar, Paper, Typography} from '@material-ui/core';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <h1>hello world </h1>
-        <Icon className="primary">start</Icon>
+        <Paper
+          elevation={0}
+          style={{padding: 0, margin: 0, backgroundColor: '#fafafa'}}>
+          <AppBar color="primary" position="static" style={{height: 64}}>
+            <Toolbar style={{height: 64}}>
+              <Typography color="inherit">TODO APP</Typography>
+            </Toolbar>
+          </AppBar>
+          {this.props.children}
+        </Paper>
       </div>
     );
   }
