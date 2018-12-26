@@ -7,6 +7,20 @@ import TodoList from '../TodoList/';
 import TodoItem from '../TodoItem/';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      todos: [],
+    }
+  }
+
+  addTodo = todo => {
+    const newTodo = {...todo, id: Date.now()}
+    const todos = [...this.state.todos, newTodo]
+    this.setState({todos})
+  }
+
+
   render() {
     return (
       <div>
@@ -19,7 +33,9 @@ class App extends Component {
             </Toolbar>
           </AppBar>
         </Paper>
-        <TodoForm />
+        <TodoForm 
+          addTodo={this.addTodo}
+        />
       </div>
     );
   }

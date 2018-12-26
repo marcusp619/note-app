@@ -9,22 +9,23 @@ class TodoForm extends Component {
       select: 'Work',
     };
   }
-  
+
   handleChange = e => {
     const {name, value} = e.target;
-    this.setState({[name]: value})
-  }
+    this.setState({[name]: value});
+  };
 
   handleSubmit = e => {
     e.preventDefault();
-  }
+    this.props.addTodo(this.state);
+  };
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
           Title:
-          <input 
+          <input
             name="title"
             value={this.state.title}
             onChange={this.handleChange}
@@ -32,17 +33,16 @@ class TodoForm extends Component {
         </label>
         <label>
           Todo:
-          <textarea 
-            name="todo" 
-            value={this.state.todo} 
+          <textarea
+            name="todo"
+            value={this.state.todo}
             onChange={this.handleChange}
           />
         </label>
-        <select 
-          name="select" 
+        <select
+          name="select"
           value={this.state.select}
-          onChange={this.handleChange}
-        >
+          onChange={this.handleChange}>
           <option value="Work">Work</option>
           <option value="Personal">Personal</option>
           <option value="Hobby">Hobby</option>
