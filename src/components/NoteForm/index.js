@@ -1,26 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-class TodoForm extends Component {
+class NoteForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: '',
-      todoDescription: '',
-      tags: 'Work',
+      noteDescription: '',
+      tag: 'Work',
     };
   }
 
   handleChange = e => {
-    const {name, value} = e.target;
-    this.setState({[name]: value});
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.addTodo(this.state);
+    this.props.addNote(this.state);
     this.setState({
       title: '',
-      todoDescription: '',
+      noteDescription: '',
     });
   };
 
@@ -36,10 +36,10 @@ class TodoForm extends Component {
           />
         </label>
         <label>
-          Todo:
+          Note:
           <textarea
-            name="todoDescription"
-            value={this.state.todoDescription}
+            name="noteDescription"
+            value={this.state.noteDescription}
             onChange={this.handleChange}
             maxLength="250"
           />
@@ -52,10 +52,10 @@ class TodoForm extends Component {
           <option value="Personal">Personal</option>
           <option value="Hobby">Hobby</option>
         </select>
-        <button>Add Todo</button>
+        <button>Add Note</button>
       </form>
     );
   }
 }
 
-export default TodoForm;
+export default NoteForm;
