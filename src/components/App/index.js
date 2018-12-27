@@ -1,45 +1,55 @@
-import React, {Component} from 'react';
-import './App.css';
-import {AppBar, Toolbar, Paper, Typography} from '@material-ui/core';
-import TodoForm from '../TodoForm/';
-import TodoList from '../TodoList/';
-import uuidv4 from  'uuid/v4'
+import React, { Component } from 'react';
+import { AppBar, Toolbar, Paper, Typography } from '@material-ui/core';
+import NoteForm from '../NoteForm/';
+import NoteList from '../NoteList/';
+import uuidv4 from 'uuid/v4';
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      todos: [],
+      notes: [],
     };
   }
 
-  addTodo = todo => {
-    const newTodo = {...todo, id: uuidv4()};
-    const todos = [...this.state.todos, newTodo];
-    this.setState({todos});
+  componentDidMount() {
+    const query = `
+      query {
+      listNotes {
+        title,
+        addedAt
+      }
+    }
+    `
+  }
+
+  addNote = note => {
+    const newnote = { ...note, id: uuidv4() };
+    const notes = [...this.state.notes, newnote];
+    this.setState({ notes });
   };
 
-  removeTodo = id => {
-    const todos = this.state.todos.filter(todo => todo.id !== id)
-    this.setState({todos});
-  }
+  removeNote = id => {
+    const notes = this.state.notes.filter(note => note.id !== id);
+    this.setState({ notes });
+  };
+
+
 
   render() {
     return (
       <div>
         <Paper
           elevation={0}
-          style={{padding: 0, margin: 0, backgroundColor: '#fafafa'}}>
-          <AppBar color="primary" position="static" style={{height: 64}}>
-            <Toolbar style={{height: 64}}>
-              <Typography color="inherit">TODO APP</Typography>
+          style={{ padding: 0, margin: 0, backgroundColor: '#fafafa' }}>
+          <AppBar color="primary" position="static" style={{ height: 64 }}>
+            <Toolbar style={{ height: 64 }}>
+              <Typography color="inherit">Note APP</Typography>
             </Toolbar>
           </AppBar>
         </Paper>
-        <TodoForm addTodo={this.addTodo} />
-        <TodoList 
-          todos={this.state.todos}
-          removeTodo={this.removeTodo}
-        />
+        <NoteForm addNote={this.addNote} />
+        <NoteList notes={this.state.notes} removeNote={this.removeNote} />
       </div>
     );
   }
