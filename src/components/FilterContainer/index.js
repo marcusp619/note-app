@@ -26,9 +26,9 @@ class FilterContainer extends Component {
     return (
       <Container>
         <Header as='h2'>Filter Notes By Category: </Header>
-        <Button onClick={() => this.filterNotes("Work")}>Work</Button>
-        <Button onClick={() => this.filterNotes("Personal")}>Personal</Button>
-        <Button onClick={() => this.filterNotes("Hobby")}>Hobby</Button>
+        <Button onClick={() => this.props.filterNotes("Work")}>Work</Button>
+        <Button onClick={() => this.props.filterNotes("Personal")}>Personal</Button>
+        <Button onClick={() => this.props.filterNotes("Hobby")}>Hobby</Button>
         <Form style={formStyle} onSubmit={this.handleSubmit}>
           <Header as='h2'>Filter Notes By Date: </Header>
           <Form.Field>
