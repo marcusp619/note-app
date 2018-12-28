@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Paper, Typography } from '@material-ui/core';
 import NoteForm from '../NoteForm/';
 import NoteList from '../NoteList/';
 import uuidv4 from 'uuid/v4';
-
+import { getAllNotes } from '../../helper/api'
 class App extends Component {
   constructor() {
     super();
@@ -12,15 +12,9 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    const query = `
-      query {
-      listNotes {
-        title,
-        addedAt
-      }
-    }
-    `
+  componentDidMount = async () => {
+    let notes = await getAllNotes()
+    this.setState({ notes })
   }
 
   addNote = note => {
@@ -33,8 +27,6 @@ class App extends Component {
     const notes = this.state.notes.filter(note => note.id !== id);
     this.setState({ notes });
   };
-
-
 
   render() {
     return (

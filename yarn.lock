@@ -952,6 +952,14 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.2.tgz#54c5a964462be3d4d78af631363c18d6fa91ac26"
   integrity sha512-yprFYuno9FtNsSHVlSWd+nRlmGoAbqbeCwOryP6sC/zoCjhpArcRMYp19EvpSUSizJAlsXEwJv+wcWS9XaXdMw==
 
+"@semantic-ui-react/event-stack@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@semantic-ui-react/event-stack/-/event-stack-3.0.1.tgz#41d0b095ac94cc5e1607a4fed4d0f8860d0d2e60"
+  integrity sha512-9YNRr0z9GEvk/yvIzAzv0sbYa/FPrtWTYibu+chJ0CEMQjYDjUdRSqtxXOvP0eM6kZjD1G/Oy1LhPiHG7DRHsg==
+  dependencies:
+    exenv "^1.2.2"
+    prop-types "^15.6.2"
+
 "@svgr/core@^2.4.1":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@svgr/core/-/core-2.4.1.tgz#03a407c28c4a1d84305ae95021e8eabfda8fa731"
@@ -2300,7 +2308,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -2629,14 +2637,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
-
-cross-fetch@2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.2.2.tgz#a47ff4f7fc712daba8f6a695a11c948440d45723"
-  integrity sha1-pH/09/xxLauo9qaVoRyUhEDUVyM=
-  dependencies:
-    node-fetch "2.1.2"
-    whatwg-fetch "2.0.4"
 
 cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
@@ -3669,6 +3669,11 @@ execa@^0.7.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+exenv@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+  integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
+
 exit@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
@@ -4332,25 +4337,6 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
   integrity sha1-Dovf5NHduIVNZOBOp8AOKgJuVlg=
-
-graphql-request@^1.8.2:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-1.8.2.tgz#398d10ae15c585676741bde3fc01d5ca948f8fbe"
-  integrity sha512-dDX2M+VMsxXFCmUX0Vo0TopIZIX4ggzOtiCsThgtrKR4niiaagsGTDIHj3fsOMFETpa064vzovI+4YV4QnMbcg==
-  dependencies:
-    cross-fetch "2.2.2"
-
-graphql-tag@^2.10.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.0.tgz#87da024be863e357551b2b8700e496ee2d4353ae"
-  integrity sha512-9FD6cw976TLLf9WYIUPCaaTpniawIjHWZSwIRZSjrfufJamcXbVVYfN2TWvJYbw0Xf2JjYbl1/f2+wDnBVw3/w==
-
-graphql@^14.0.2:
-  version "14.0.2"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.0.2.tgz#7dded337a4c3fd2d075692323384034b357f5650"
-  integrity sha512-gUC4YYsaiSJT1h40krG3J+USGlwhzNTXSb4IOZljn9ag5Tj+RkoXrWp+Kh7WyE3t1NCfab5kzCuxBIvOMERMXw==
-  dependencies:
-    iterall "^1.2.2"
 
 growly@^1.3.0:
   version "1.3.0"
@@ -5360,11 +5346,6 @@ istanbul-reports@^1.5.1:
   dependencies:
     handlebars "^4.0.3"
 
-iterall@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.2.tgz#92d70deb8028e0c39ff3164fdbf4d8b088130cd7"
-  integrity sha512-yynBb1g+RFUPY64fTrFv7nsjRrENBQJaX2UL+2Szc9REFrSNm1rpSXHGzhmAy7a9uv3vlvgBlXnf9RqmPH1/DA==
-
 jest-changed-files@^23.4.2:
   version "23.4.2"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-23.4.2.tgz#1eed688370cd5eebafe4ae93d34bb3b64968fe83"
@@ -5930,6 +5911,11 @@ jsx-ast-utils@^2.0.1:
   integrity sha1-6AGxs5mF4g//yHtA43SAgOLcrH8=
   dependencies:
     array-includes "^3.0.3"
+
+keyboard-key@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/keyboard-key/-/keyboard-key-1.0.2.tgz#212e14dde4c2059814336159bbc5acd0a348ca6b"
+  integrity sha512-05cjQmw4ss/YuY2utmVim0wywDyBZGUivo8siLPkWinwGWtKlO8/4RGbPUqNycwlD3u/3D15eNRjnNAyaTDs8g==
 
 keycode@^2.1.9:
   version "2.2.0"
@@ -6569,11 +6555,6 @@ no-case@^2.2.0:
   integrity sha512-rmTZ9kz+f3rCvK2TD1Ue/oZlns7OGoIWP4fc3llxxRXlOkHKoWPPWJOfFYpITabSow43QJbRIoHQXtt10VldyQ==
   dependencies:
     lower-case "^1.1.1"
-
-node-fetch@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
-  integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
 
 node-fetch@^1.0.1:
   version "1.7.3"
@@ -8794,6 +8775,19 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.7.5"
 
+semantic-ui-react@^0.84.0:
+  version "0.84.0"
+  resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.84.0.tgz#43f908fd547b1e8b2b108675a93cd7d7460bcdbe"
+  integrity sha512-OOqdtH+hBxVlh/lQa+zet9MEPcA8cBUo7ePVYZhx82hwF5Ky47FiWrgLk3ZSNie7bb4VkuiuLR9y5cY0EooRlw==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    "@semantic-ui-react/event-stack" "^3.0.1"
+    classnames "^2.2.6"
+    keyboard-key "^1.0.2"
+    lodash "^4.17.11"
+    prop-types "^15.6.2"
+    shallowequal "^1.1.0"
+
 "semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
@@ -8907,6 +8901,11 @@ shallow-clone@^1.0.0:
     is-extendable "^0.1.1"
     kind-of "^5.0.0"
     mixin-object "^2.0.1"
+
+shallowequal@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
+  integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
 
 shebang-command@^1.2.0:
   version "1.2.0"
@@ -10035,11 +10034,6 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3, whatwg-encoding@^1.0.5:
   integrity sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw==
   dependencies:
     iconv-lite "0.4.24"
-
-whatwg-fetch@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
-  integrity sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
 
 whatwg-fetch@3.0.0, whatwg-fetch@>=0.10.0:
   version "3.0.0"
