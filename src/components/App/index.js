@@ -3,7 +3,7 @@ import { Container, Header } from 'semantic-ui-react'
 import NoteForm from '../NoteForm/';
 import NoteList from '../NoteList/';
 import uuidv4 from 'uuid/v4';
-import { getAllNotes } from '../../helper/api'
+import { getAllNotes, postNote } from '../../helper/api'
 class App extends Component {
   constructor() {
     super();
@@ -14,12 +14,13 @@ class App extends Component {
 
   componentDidMount = async () => {
     let notes = await getAllNotes()
+    console.log('ran again')
     this.setState({ notes })
   }
 
-  addNote = note => {
-    const newnote = { ...note, id: uuidv4() };
-    const notes = [...this.state.notes, newnote];
+  addNote = async note => {
+    const newNote = await postNote(note)
+    const notes = [newNote, ...this.state.notes];
     this.setState({ notes });
   };
 
