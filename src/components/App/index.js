@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Container, Header } from 'semantic-ui-react'
 import NoteForm from '../NoteForm/';
 import NoteList from '../NoteList/';
-import { getAllNotes, postNote, deleteNote } from '../../helper/api'
+import FilterContainer from '../FilterContainer/'
+import { getAllNotes, postNote, deleteNote, filteredNotes } from '../../helper/api'
 
 class App extends Component {
   constructor() {
@@ -30,12 +31,18 @@ class App extends Component {
     this.setState({ notes });
   };
 
+  filterNotes = async category => {
+    const notes = await filteredNotes(category);
+    this.setState({ notes });
+  }
+
   render() {
     return (
       <Container>
         <Header size='huge'>Note App</Header>
         <Container style={containerStyle}>
           <NoteForm addNote={this.addNote} />
+          <FilterContainer filterNotes={this.filterNotes} />
         </Container>
         <NoteList notes={this.state.notes} removeNote={this.removeNote} />
       </Container>
