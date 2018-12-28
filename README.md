@@ -1,4 +1,6 @@
 # Note App
+## It's Live
+[site](http://note-app-mp.s3-website-us-east-1.amazonaws.com/)
 
 ## Getting Started
 `git clone this repo`
