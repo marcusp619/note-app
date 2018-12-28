@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppBar, Toolbar, Paper, Typography } from '@material-ui/core';
+import { Container, Header } from 'semantic-ui-react'
 import NoteForm from '../NoteForm/';
 import NoteList from '../NoteList/';
 import uuidv4 from 'uuid/v4';
@@ -30,21 +30,19 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Paper
-          elevation={0}
-          style={{ padding: 0, margin: 0, backgroundColor: '#fafafa' }}>
-          <AppBar color="primary" position="static" style={{ height: 64 }}>
-            <Toolbar style={{ height: 64 }}>
-              <Typography color="inherit">Note APP</Typography>
-            </Toolbar>
-          </AppBar>
-        </Paper>
-        <NoteForm addNote={this.addNote} />
+      <Container>
+        <Header size='huge'>Note App</Header>
+        <Container style={containerStyle}>
+          <NoteForm addNote={this.addNote} />
+        </Container>
         <NoteList notes={this.state.notes} removeNote={this.removeNote} />
-      </div>
+      </Container>
     );
   }
+}
+
+const containerStyle = {
+  boxShadow: 'rgb(204, 204, 204) 0px 1px 2px',
 }
 
 export default App;
