@@ -60,6 +60,7 @@ export const filteredNotes = async (category) => {
   query{
     filterNotes(tag: "${category}")
       {id,
+      title,
       tag,
       noteDescription,
       addedAt
