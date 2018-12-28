@@ -6,7 +6,7 @@ import { Container, Segment } from 'semantic-ui-react'
 const NoteList = ({ notes, removeNote }) => {
   if (notes) {
     const noteItems = notes.map(note => (
-      <Segment raised piled >
+      <Segment raised piled key={note.id}>
         <NoteItem {...note} removeNote={removeNote} key={uuidv4()} />
       </Segment>
     ));
