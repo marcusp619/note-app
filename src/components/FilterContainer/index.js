@@ -29,8 +29,9 @@ class FilterContainer extends Component {
         <Button onClick={() => this.props.filterNotes("Work")}>Work</Button>
         <Button onClick={() => this.props.filterNotes("Personal")}>Personal</Button>
         <Button onClick={() => this.props.filterNotes("Hobby")}>Hobby</Button>
+        <Button onClick={() => this.props.getNotes()}>Reset</Button>
         <Form style={formStyle} onSubmit={this.handleSubmit}>
-          <Header as='h2'>Filter Notes By Date: </Header>
+          <Header style={headerStyle} as='h2'>Filter Notes By Date: </Header>
           <Form.Field>
             <Input
               name="date"
@@ -49,6 +50,10 @@ class FilterContainer extends Component {
 
 const formStyle = {
   marginBottom: '30px',
+}
+
+const headerStyle = {
+  marginTop: '25px',
 }
 
 export default FilterContainer;
