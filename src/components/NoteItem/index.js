@@ -7,7 +7,7 @@ const NoteItem = ({ title, noteDescription, id, tag, addedAt, removeNote }) => (
     <Header color="orange" size="huge">
       {title}
       <Header.Subheader>Tag: {tag}</Header.Subheader>
-      <Header.Subheader>Added At: {moment(parseInt(addedAt)).format('YYYY/MM/D hh:mm:ss')}</Header.Subheader>
+      <Header.Subheader>Added At: {moment(parseInt(addedAt)).format('YYYY/MM/D hh:mm')}</Header.Subheader>
     </Header>
     <p style={pStyle}>Note: {noteDescription}</p>
     <Button secondary onClick={() => removeNote(id)}>Remove Note</Button>

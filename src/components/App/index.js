@@ -3,7 +3,7 @@ import { Container, Header } from 'semantic-ui-react'
 import NoteForm from '../NoteForm/';
 import NoteList from '../NoteList/';
 import FilterContainer from '../FilterContainer/'
-import { getAllNotes, postNote, deleteNote, filteredNotes } from '../../helper/api'
+import { getAllNotes, postNote, deleteNote, filteredNotes, filteredDates } from '../../helper/api'
 
 class App extends Component {
   constructor() {
@@ -36,13 +36,18 @@ class App extends Component {
     this.setState({ notes });
   }
 
+  filterDates = async date => {
+    const notes = await filteredDates(date)
+    this.setState({ notes })
+  }
+
   render() {
     return (
       <Container>
         <Header size='huge'>Note App</Header>
         <Container style={containerStyle}>
           <NoteForm addNote={this.addNote} />
-          <FilterContainer filterNotes={this.filterNotes} />
+          <FilterContainer filterNotes={this.filterNotes} filterDates={this.filterDates} />
         </Container>
         <NoteList notes={this.state.notes} removeNote={this.removeNote} />
       </Container>
