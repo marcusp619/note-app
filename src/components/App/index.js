@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Container, Header } from 'semantic-ui-react'
 import NoteForm from '../NoteForm/';
 import NoteList from '../NoteList/';
-import uuidv4 from 'uuid/v4';
-import { getAllNotes, postNote } from '../../helper/api'
+import { getAllNotes, postNote, deleteNote } from '../../helper/api'
+
 class App extends Component {
   constructor() {
     super();
@@ -15,7 +15,7 @@ class App extends Component {
   componentDidMount = async () => {
     let notes = await getAllNotes()
     console.log('ran again')
-    this.setState({ notes })
+    this.setState({ notes });
   }
 
   addNote = async note => {
@@ -24,8 +24,9 @@ class App extends Component {
     this.setState({ notes });
   };
 
-  removeNote = id => {
+  removeNote = async id => {
     const notes = this.state.notes.filter(note => note.id !== id);
+    await deleteNote(id);
     this.setState({ notes });
   };
 

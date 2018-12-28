@@ -39,3 +39,19 @@ export const postNote = async (note) => {
   // use moment.js moment(date1).format('YYYY/MM/D hh:mm:ss')
   return result.data.createNote
 }
+
+export const deleteNote = async (id) => {
+  console.log(id);
+  const query = `
+  mutation {
+    removeNote (id: "${id}")
+  }`
+
+  let response = await fetch('https://hfi519bvp7.execute-api.us-east-1.amazonaws.com/dev/notes', {
+    method: 'POST',
+    headers: { "Content-Type": "application/json" },
+    body: query,
+  });
+
+  let result = await response.json();
+}
