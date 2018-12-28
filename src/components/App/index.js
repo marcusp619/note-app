@@ -14,8 +14,11 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
+    this.getNotes();
+  }
+
+  getNotes = async () => {
     let notes = await getAllNotes()
-    console.log('ran again')
     this.setState({ notes });
   }
 
@@ -47,7 +50,7 @@ class App extends Component {
         <Header size='huge'>Note App</Header>
         <Container style={containerStyle}>
           <NoteForm addNote={this.addNote} />
-          <FilterContainer filterNotes={this.filterNotes} filterDates={this.filterDates} />
+          <FilterContainer filterNotes={this.filterNotes} filterDates={this.filterDates} getNotes={this.getNotes} />
         </Container>
         <NoteList notes={this.state.notes} removeNote={this.removeNote} />
       </Container>
