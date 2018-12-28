@@ -17,8 +17,6 @@ class App extends Component {
     this.setState({ notes })
   }
 
-
-
   addNote = note => {
     const newnote = { ...note, id: uuidv4() };
     const notes = [...this.state.notes, newnote];
@@ -29,8 +27,6 @@ class App extends Component {
     const notes = this.state.notes.filter(note => note.id !== id);
     this.setState({ notes });
   };
-
-
 
   render() {
     return (
